@@ -1,13 +1,12 @@
 package com.infogalaxy;
 
-import javax.naming.Name;
 import java.util.Scanner;
 
 public class Student {
     String Name;
     int Id;
     Scanner sc = new Scanner(System.in);
-
+        //  Student's Data
         public void setStudent(){
             System.out.println("Enter the Student Name:");
             Name = sc.next();
@@ -15,28 +14,15 @@ public class Student {
             Id = sc.nextInt();
         }
 }
-class Result extends Student {
-
-    Double Perc;
-    public void setMarks(){
-
-        System.out.println("Enter the Percentage");
-        Perc = sc.nextDouble();
-    }
-    public void getResult() {
-        System.out.println("Student Name:"+Name);
-        System.out.println("Student ID:"+Id);
-        System.out.println("Student Percentage:"+Perc);
+class InternalMarks extends Student {
+    int im1;
+    int im2;
+    //Student's Internal Marks
+    public void setInternal() {
+        System.out.println("Enter the 1st Internal Marks of " + Name + ":");
+        im1 = sc.nextInt();
+        System.out.println("Enter the 2nd Internal Marks of " + Name + ":");
+        im2 = sc.nextInt();
     }
 }
-class Main {
-    public static void main(String args[]){
-        Result result = new Result();
-        result.setStudent();
-        result.setMarks();
-        result.getResult();
-    }
-}
-
-
 
